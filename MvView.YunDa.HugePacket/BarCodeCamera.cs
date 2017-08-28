@@ -272,7 +272,7 @@ namespace MvView.Core
                 }
 
 
-                string imgType = "*.bmp|*.png|*.jpg|*.jpeg";
+                string imgType = "*.bmp|*.png|*.jpg";
                 string[] ImgType = imgType.Split('|');
                 List<string> Dirs = new List<string>();
                 for (int i = 0; i < ImgType.Length; i++)
