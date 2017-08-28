@@ -966,21 +966,6 @@ namespace MvView.Core
         }
 
 
-        private void test()
-        {
-            byte[] _image = new byte[_FrameData.ImageSize];
-
-            Array.Copy(_FrameData.Image, _image, _FrameData.ImageSize);
-
-
-            using (MemoryStream ms = new MemoryStream(_image))
-            {
-                Bitmap bm = (Bitmap)Image.FromStream(ms);
-            }
-
-            long blockID = _FrameData.BlockID;
-
-        }
 
 
         /// <summary>
