@@ -1,0 +1,15 @@
+D:\Project\C#\YunDa\20160822\BigPacket\MvBarCode\MvView.YunDa.HugePacket\bin\Release\MvView.YunDa.HugePacket.dll
+D:\Project\C#\YunDa\20160822\BigPacket\MvBarCode\MvView.YunDa.HugePacket\bin\Release\MvView.YunDa.HugePacket.pdb
+D:\Project\C#\YunDa\20160822\BigPacket\MvBarCode\MvView.YunDa.HugePacket\bin\Release\MvBarCode.dll
+D:\Project\C#\YunDa\20160822\BigPacket\MvBarCode\MvView.YunDa.HugePacket\bin\Release\MvView.Scale.dll
+D:\Project\C#\YunDa\20160822\BigPacket\MvBarCode\MvView.YunDa.HugePacket\bin\Release\ThridLibray.dll
+D:\Project\C#\YunDa\20160822\BigPacket\MvBarCode\MvView.YunDa.HugePacket\bin\Release\CLIDelegate.dll
+D:\Project\C#\YunDa\20160822\BigPacket\MvBarCode\MvView.YunDa.HugePacket\bin\Release\MvBarCode.pdb
+D:\Project\C#\YunDa\20160822\BigPacket\MvBarCode\MvView.YunDa.HugePacket\bin\Release\MvView.Scale.pdb
+D:\Project\C#\YunDa\20160822\BigPacket\MvBarCode\bin\Release\MvView.YunDa.HugePacket.dll
+D:\Project\C#\YunDa\20160822\BigPacket\MvBarCode\bin\Release\MvView.YunDa.HugePacket.pdb
+D:\Project\C#\YunDa\20160822\BigPacket\MvBarCode\MvView.YunDa.HugePacket\obj\Release\MvView.YunDa.HugePacket.csprojResolveAssemblyReference.cache
+D:\Project\C#\YunDa\20160822\BigPacket\MvBarCode\MvView.YunDa.HugePacket\obj\Release\MvView.YunDa.HugePacket.dll
+D:\Project\C#\YunDa\20160822\BigPacket\MvBarCode\MvView.YunDa.HugePacket\obj\Release\MvView.YunDa.HugePacket.pdb
+D:\Project\C#\YunDa\20160822\BigPacket\MvBarCode\bin\x86\MvView.YunDa.HugePacket.dll
+D:\Project\C#\YunDa\20160822\BigPacket\MvBarCode\bin\x86\MvView.YunDa.HugePacket.pdb

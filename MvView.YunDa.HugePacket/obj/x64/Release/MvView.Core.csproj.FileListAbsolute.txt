@@ -1,0 +1,17 @@
+D:\CodeRepository\C#\非苏州版本\MvBarCode_BigPacket\MvView.YunDa.HugePacket\obj\x64\Release\MvView.Core.csprojResolveAssemblyReference.cache
+D:\CodeRepository\C#\非苏州版本\MvBarCode_BigPacket\MvView.YunDa.HugePacket\bin\x64\Release\log.config
+D:\CodeRepository\C#\非苏州版本\MvBarCode_BigPacket\MvView.YunDa.HugePacket\bin\x64\Release\config.ini
+D:\CodeRepository\C#\非苏州版本\MvBarCode_BigPacket\MvView.YunDa.HugePacket\bin\x64\Release\MvView.Core.dll
+D:\CodeRepository\C#\非苏州版本\MvBarCode_BigPacket\MvView.YunDa.HugePacket\bin\x64\Release\MvView.Core.pdb
+D:\CodeRepository\C#\非苏州版本\MvBarCode_BigPacket\MvView.YunDa.HugePacket\bin\x64\Release\MvView.YunDa.HugePacket.XML
+D:\CodeRepository\C#\非苏州版本\MvBarCode_BigPacket\MvView.YunDa.HugePacket\bin\x64\Release\log4net.dll
+D:\CodeRepository\C#\非苏州版本\MvBarCode_BigPacket\MvView.YunDa.HugePacket\bin\x64\Release\MvBarCode.dll
+D:\CodeRepository\C#\非苏州版本\MvBarCode_BigPacket\MvView.YunDa.HugePacket\bin\x64\Release\MvView.Scale.dll
+D:\CodeRepository\C#\非苏州版本\MvBarCode_BigPacket\MvView.YunDa.HugePacket\bin\x64\Release\ThridLibray.dll
+D:\CodeRepository\C#\非苏州版本\MvBarCode_BigPacket\MvView.YunDa.HugePacket\bin\x64\Release\CLIDelegate.dll
+D:\CodeRepository\C#\非苏州版本\MvBarCode_BigPacket\MvView.YunDa.HugePacket\bin\x64\Release\MvBarCode.pdb
+D:\CodeRepository\C#\非苏州版本\MvBarCode_BigPacket\MvView.YunDa.HugePacket\bin\x64\Release\MvBarCode.xml
+D:\CodeRepository\C#\非苏州版本\MvBarCode_BigPacket\MvView.YunDa.HugePacket\bin\x64\Release\MvView.Scale.pdb
+D:\CodeRepository\C#\非苏州版本\MvBarCode_BigPacket\MvView.YunDa.HugePacket\bin\x64\Release\MvView.Scale.xml
+D:\CodeRepository\C#\非苏州版本\MvBarCode_BigPacket\MvView.YunDa.HugePacket\obj\x64\Release\MvView.Core.dll
+D:\CodeRepository\C#\非苏州版本\MvBarCode_BigPacket\MvView.YunDa.HugePacket\obj\x64\Release\MvView.Core.pdb

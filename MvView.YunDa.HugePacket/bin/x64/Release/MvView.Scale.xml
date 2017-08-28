@@ -1,0 +1,819 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MvView.Scale</name>
+    </assembly>
+    <members>
+        <member name="T:MvView.Scale.BaoYu">
+            <summary>
+            宝羽电子秤封装类
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.BaoYu.Open(System.String)">
+            <summary>
+            打开网络通道
+            </summary>
+            <param name="info">ip:port</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvView.Scale.BaoYu.Close">
+            <summary>
+            关闭通道
+            </summary>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Scale.BaoYu.Post(System.String,System.Int32,System.Double@)">
+            <summary>
+            同步获取称重信息
+            </summary>
+            <param name="barCode">一维码信息</param>
+            <param name="weight">称重数据</param>
+            <returns>操作结果</returns>
+        </member>
+        <member name="E:MvView.Scale.BaoYu.ScaleWight">
+            <summary>
+            称重信息返回事件
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.BaoYu.AsyncPost(System.String)">
+            <summary>
+            异步获取称重信息
+            </summary>
+            <param name="barCode">一维码信息</param>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Scale.BaoYu.OmStreamData(System.Object,MvView.Scale.StreamEventArgs)">
+            <summary>
+            TCP数据流回调
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MvView.Scale.BaoYu.Start">
+            <summary>
+            开始捕获
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MvView.Scale.BaoYu.Stop">
+            <summary>
+            停止捕获
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MvView.Scale.BaoYu.Dispose">
+            <summary>
+            资源释放
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:MvView.Scale.CircularQueue`1" -->
+        <member name="F:MvView.Scale.CircularQueue`1._queue">
+            <summary>
+            队列数组
+            </summary>
+        </member>
+        <member name="F:MvView.Scale.CircularQueue`1._capacity">
+            <summary>
+            队列内存大小
+            </summary>
+        </member>
+        <member name="F:MvView.Scale.CircularQueue`1._back">
+            <summary>
+            队尾
+            </summary>
+        </member>
+        <member name="F:MvView.Scale.CircularQueue`1._front">
+            <summary>
+            队首
+            </summary>
+        </member>
+        <member name="F:MvView.Scale.CircularQueue`1._size">
+            <summary>
+            队列大小
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.CircularQueue`1.#ctor(System.Int32)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="maxSize">队列大小</param>
+        </member>
+        <member name="P:MvView.Scale.CircularQueue`1.Capacity">
+            <summary>
+            队列存储元素能力个数
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.CircularQueue`1.Push(`0)">
+            <summary>
+            写数据到环形缓冲
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:MvView.Scale.CircularQueue`1.Push(`0[])">
+            <summary>
+            将过个元素到缓冲区
+            </summary>
+            <param name="item">入队元素</param>
+        </member>
+        <member name="M:MvView.Scale.CircularQueue`1.IsIn(`0)">
+            <summary>
+            校验队列中是否有元素
+            </summary>
+            <param name="item">被校验元素</param>
+            <returns></returns>
+        </member>
+        <member name="P:MvView.Scale.CircularQueue`1.IsFull">
+            <summary>
+            队列是否满
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.CircularQueue`1.Pop(System.Int32)">
+            <summary>
+            获取队列数据，获取最后的n个元素
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.CircularQueue`1.EarliestIndex(`0[])">
+            <summary>
+            获取最早单号
+            </summary>
+            <param name="items">查询记录集</param>
+            <returns>查询结果</returns>
+        </member>
+        <member name="M:MvView.Scale.CircularQueue`1.Reset">
+            <summary>
+            重置环形队列
+            </summary>
+        </member>
+        <member name="E:MvView.Scale.HaiMing.ScaleWight">
+            <summary>
+            异步事件
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.HaiMing.Open(System.String)">
+            <summary>
+            打开串口设备
+            </summary>
+            <param name="info">打开信息</param>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Scale.HaiMing.Close">
+            <summary>
+            关闭串口通道
+            </summary>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Scale.HaiMing.AsyncPost(System.String)">
+            <summary>
+            异步Post数据
+            </summary>
+            <param name="barCode">一维码信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvView.Scale.HaiMing.GetWight">
+            <summary>
+            实时获取当前揽件重量
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.HaiMing.Dispose">
+            <summary>
+            对象释放接口
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.HaiMing.Start">
+            <summary>
+            开始捕获重量数据
+            </summary>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Scale.HaiMing.Stop">
+            <summary>
+            停止捕获
+            </summary>
+            <returns>操作结果</returns>
+        </member>
+        <member name="P:MvView.Scale.HaiMing.SampleNum">
+            <summary>
+            样本数量
+            </summary>
+        </member>
+        <member name="T:MvView.Scale.IScale">
+            <summary>
+            称重接口类
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.IScale.Open(System.String)">
+            <summary>
+            打开电子秤通道
+            </summary>
+            <param name="info">打开信息</param>
+            <returns>操作结果</returns>
+        </member>
+        <member name="P:MvView.Scale.IScale.IsOpen">
+            <summary>
+            是否打开
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.IScale.Close">
+            <summary>
+            关闭电子秤通道
+            </summary>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Scale.IScale.Post(System.String,System.Int32,System.Double@)">
+            <summary>
+            同步获取重量信息
+            </summary>
+            <param name="barCode">一维码信息</param>
+            <param name="weight">称重信息</param>
+            <returns>操作结果</returns>
+        </member>
+        <member name="E:MvView.Scale.IScale.ScaleWight">
+            <summary>
+            称重事件
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.IScale.AsyncPost(System.String)">
+            <summary>
+            异步获取称重信息
+            </summary>
+            <param name="barCode">一维码信息</param>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Scale.IScale.Start">
+            <summary>
+            开始捕获重量数据
+            </summary>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Scale.IScale.Stop">
+            <summary>
+            停止捕获重量数据
+            </summary>
+            <returns>操作结果</returns>
+        </member>
+        <member name="P:MvView.Scale.IScale.MaxDeviation">
+            <summary>
+            最大误差范围
+            </summary>
+        </member>
+        <member name="P:MvView.Scale.IScale.SampleNum">
+            <summary>
+            样本数量
+            </summary>
+        </member>
+        <member name="T:MvView.Scale.RuiTai">
+            <summary>
+            兼容XK3190-A7，常用于中通，申通等快递，波特率选9600
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.RuiTai.ProbeDev">
+            <summary>
+            打开串口
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.RuiTai.ParseStreamData(System.Char[],System.Int32)">
+            <summary>
+            解析串口数据,解析时去除第一个字符，去除第二个字符
+            </summary>
+            <param name="buffer">串口数据</param>
+            <param name="len">串口长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvView.Scale.RuiTai.ParseStrData(System.String)">
+            <summary>
+            解析一个协议帧
+            </summary>
+            <param name="str">一帧数据</param>
+            <returns>解析结果</returns>
+        </member>
+        <member name="M:MvView.Scale.RuiTai.ReadFromSerial">
+            <summary>
+            从串口获取重量信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="E:MvView.Scale.RuiTai.ScaleWight">
+            <summary>
+            异步事件
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.RuiTai.Open(System.String)">
+            <summary>
+            打开串口设备
+            </summary>
+            <param name="info">打开信息</param>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Scale.RuiTai.Close">
+            <summary>
+            关闭串口通道
+            </summary>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Scale.RuiTai.Post(System.String,System.Int32,System.Double@)">
+            <summary>
+            Post数据
+            </summary>
+            <param name="barCode">一维码</param>
+            <param name="timeout">超时时间</param>
+            <param name="weight">重量信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvView.Scale.RuiTai.AsyncPost(System.String)">
+            <summary>
+            异步Post数据
+            </summary>
+            <param name="barCode">一维码信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvView.Scale.RuiTai.WightCheck(System.Double,System.Double)">
+            <summary>
+            校验w和v是否在有效误差范围之内
+            </summary>
+            <param name="w">被校验值</param>
+            <param name="v">平均值</param>
+            <returns></returns>
+        </member>
+        <member name="F:MvView.Scale.RuiTai._WightWaitHandle">
+            <summary>
+            重量捕获数据
+            </summary>
+        </member>
+        <member name="F:MvView.Scale.RuiTai._bLooping">
+            <summary>
+            线程运行标识
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:MvView.Scale.RuiTai._WightCatchThread" -->
+        <member name="F:MvView.Scale.RuiTai._WightCache">
+            <summary>
+            重量缓冲
+            </summary>
+        </member>
+        <member name="F:MvView.Scale.RuiTai._LockFlagObj">
+            <summary>
+            flag对象锁
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.RuiTai.GetWight">
+            <summary>
+            实时获取当前揽件重量
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.RuiTai.Start">
+            <summary>
+            开始捕获重量数据
+            </summary>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Scale.RuiTai.Stop">
+            <summary>
+            停止捕获
+            </summary>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Scale.RuiTai.Dispose">
+            <summary>
+            对象释放接口
+            </summary>
+        </member>
+        <member name="P:MvView.Scale.RuiTai.SampleNum">
+            <summary>
+            样本数量
+            </summary>
+        </member>
+        <member name="T:MvView.Scale.ScaleBase">
+            <summary>
+            根据电子秤协议获取电子秤对象
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.ScaleBase.GetScale(System.String)">
+            <summary>
+            通过反射获取对象
+            </summary>
+            <param name="id">协议名称</param>
+            <returns>电子秤对象</returns>
+        </member>
+        <member name="P:MvView.Scale.ScaleBase.YaoHuaA7">
+            <summary>
+            耀华A7
+            </summary>
+        </member>
+        <member name="P:MvView.Scale.ScaleBase.YaoHuaA9">
+            <summary>
+            耀华A9
+            </summary>
+        </member>
+        <member name="P:MvView.Scale.ScaleBase.BaoYu">
+            <summary>
+            宝羽
+            </summary>
+        </member>
+        <member name="P:MvView.Scale.ScaleBase.NoScale">
+            <summary>
+            默认不称重模式
+            </summary>
+        </member>
+        <member name="T:MvView.Scale.StreamCoder">
+            <summary>
+            网络数据编解码类
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.StreamCoder.CharInArray(System.Char,System.Char[])">
+            <summary>
+            校验字符
+            </summary>
+            <param name="aChar">被校验字符</param>
+            <param name="charArray">检验字符集</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvView.Scale.StreamCoder.HexStringToByteArray(System.String)">
+            <summary>
+            二进制字符串转换为byte数组
+            </summary>
+            <param name="s">字符串</param>
+            <returns>byte数组</returns>
+        </member>
+        <member name="M:MvView.Scale.StreamCoder.ByteArrayToHexString(System.Byte[])">
+            <summary>
+            byte数组转换到字符
+            </summary>
+            <param name="data">byte数组</param>
+            <returns>对应的字符串</returns>
+        </member>
+        <member name="T:MvView.Scale.MvTcp">
+            <summary>
+            网络通讯类
+            </summary>
+        </member>
+        <member name="T:MvView.Scale.MvTcp.StateObject">
+            <summary>
+            数据读写状态对象
+            </summary>
+        </member>
+        <member name="E:MvView.Scale.MvTcp.StreamBuffer">
+            <summary>
+            TCP客户端数据获取事件
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.MvTcp.Connect(System.String,System.Int32)">
+            <summary>
+            连接远程对象
+            </summary>
+            <param name="ip">IP地址</param>
+            <param name="port">端口号</param>
+            <returns>连接状态</returns>
+        </member>
+        <member name="M:MvView.Scale.MvTcp.Disconnect">
+            <summary>
+            断开连接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:MvView.Scale.MvTcp.IsConnected">
+            <summary>
+            客户端是否建立连接
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.MvTcp.Send(System.Byte[])">
+            <summary>
+            发送字节数组
+            </summary>
+            <param name="data">字节</param>
+        </member>
+        <member name="M:MvView.Scale.MvTcp.Send(System.String,System.Boolean)">
+            <summary>
+            发送字符串
+            </summary>
+            <param name="str">字符串</param>
+            <param name="isHex">是否为hex字符串</param>
+        </member>
+        <member name="M:MvView.Scale.MvTcp.AsyncRead">
+            <summary>
+            异步监听读时间
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.MvTcp.TCPReadCallBack(System.IAsyncResult)">
+            <summary>
+            异步数据读取
+            </summary>
+            <param name="ar"></param>
+        </member>
+        <member name="T:MvView.Scale.StreamEventArgs">
+            <summary>
+            TCP流数据事件
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.StreamEventArgs.#ctor(System.Byte[])">
+            <summary>
+            事件构造
+            </summary>
+            <param name="hex">事件数据</param>
+        </member>
+        <member name="P:MvView.Scale.StreamEventArgs.Data">
+            <summary>
+            返回数据
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.StreamEventArgs.Clone">
+            <summary>
+            克隆事件
+            </summary>
+            <returns>克隆出的事件对象</returns>
+        </member>
+        <member name="M:MvView.Scale.StreamEventArgs.ToString">
+            <summary>
+            转换为字符串
+            </summary>
+            <returns>转换后的字符串</returns>
+        </member>
+        <member name="M:MvView.Scale.StreamEventArgs.ToHexString">
+            <summary>
+            转换为16进制形式的字符串
+            </summary>
+            <returns>转换后的字符串</returns>
+        </member>
+        <member name="T:MvView.Scale.WeightEventArgs">
+            <summary>
+            揽件称重事件
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.WeightEventArgs.#ctor(System.Double)">
+            <summary>
+            揽件称重事件构造
+            </summary>
+            <param name="arg">揽件称重</param>
+        </member>
+        <member name="M:MvView.Scale.WeightEventArgs.ToFixed(System.Double,System.Int32)">
+            <summary>
+            截取数值到指定精度位
+            </summary>
+            <param name="val">原数值</param>
+            <param name="s">精度位数</param>
+            <returns>截取后的数值</returns>
+        </member>
+        <member name="P:MvView.Scale.WeightEventArgs.Weight">
+            <summary>
+            重量
+            </summary>
+        </member>
+        <member name="P:MvView.Scale.WeightEventArgs.BarCode">
+            <summary>
+            一维码信息
+            </summary>
+        </member>
+        <member name="P:MvView.Scale.WeightEventArgs.RealWeight">
+            <summary>
+            稳定称重标识
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.WeightEventArgs.Clone">
+            <summary>
+            克隆对象
+            </summary>
+            <returns>称重事件</returns>
+        </member>
+        <member name="T:MvView.Scale.YaoHuaA8">
+            <summary>
+            兼容XK3190-A7，常用于中通，申通等快递，波特率选9600
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA8.ProbeDev">
+            <summary>
+            打开串口
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA8.ParseStreamData(System.Char[],System.Int32)">
+            <summary>
+            解析串口数据,解析时去除第一个字符，去除第二个字符
+            </summary>
+            <param name="buffer">串口数据</param>
+            <param name="len">串口长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA8.ParseStrData(System.String)">
+            <summary>
+            解析一个协议帧
+            </summary>
+            <param name="str">一帧数据</param>
+            <returns>解析结果</returns>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA8.ReadFromSerial">
+            <summary>
+            从串口获取重量信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="E:MvView.Scale.YaoHuaA8.ScaleWight">
+            <summary>
+            异步事件
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA8.Open(System.String)">
+            <summary>
+            打开串口设备
+            </summary>
+            <param name="info">打开信息</param>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA8.Close">
+            <summary>
+            关闭串口通道
+            </summary>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA8.Post(System.String,System.Int32,System.Double@)">
+            <summary>
+            Post数据
+            </summary>
+            <param name="barCode">一维码</param>
+            <param name="timeout">超时时间</param>
+            <param name="weight">重量信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA8.AsyncPost(System.String)">
+            <summary>
+            异步Post数据
+            </summary>
+            <param name="barCode">一维码信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA8.WightCheck(System.Double,System.Double)">
+            <summary>
+            校验w和v是否在有效误差范围之内
+            </summary>
+            <param name="w">被校验值</param>
+            <param name="v">平均值</param>
+            <returns></returns>
+        </member>
+        <member name="F:MvView.Scale.YaoHuaA8._WightWaitHandle">
+            <summary>
+            重量捕获数据
+            </summary>
+        </member>
+        <member name="F:MvView.Scale.YaoHuaA8._bLooping">
+            <summary>
+            线程运行标识
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:MvView.Scale.YaoHuaA8._WightCatchThread" -->
+        <member name="F:MvView.Scale.YaoHuaA8._WightCache">
+            <summary>
+            重量缓冲
+            </summary>
+        </member>
+        <member name="F:MvView.Scale.YaoHuaA8._LockFlagObj">
+            <summary>
+            flag对象锁
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA8.GetWight">
+            <summary>
+            实时获取当前揽件重量
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA8.Start">
+            <summary>
+            开始捕获重量数据
+            </summary>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA8.Stop">
+            <summary>
+            停止捕获
+            </summary>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA8.Dispose">
+            <summary>
+            对象释放接口
+            </summary>
+        </member>
+        <member name="P:MvView.Scale.YaoHuaA8.SampleNum">
+            <summary>
+            样本数量
+            </summary>
+        </member>
+        <member name="T:MvView.Scale.YaoHuaA7">
+            <summary>
+            兼容XK3190-A7，常用于中通，申通等快递，波特率选9600
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA7.ProbeDev">
+            <summary>
+            打开串口
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA7.ParseStreamData(System.Char[],System.Int32)">
+            <summary>
+            解析串口数据,解析时去除第一个字符，去除第二个字符
+            </summary>
+            <param name="buffer">串口数据</param>
+            <param name="len">串口长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA7.ParseStrData(System.String)">
+            <summary>
+            解析一个协议帧
+            </summary>
+            <param name="str">一帧数据</param>
+            <returns>解析结果</returns>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA7.ReadFromSerial">
+            <summary>
+            从串口获取重量信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="E:MvView.Scale.YaoHuaA7.ScaleWight">
+            <summary>
+            异步事件
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA7.Open(System.String)">
+            <summary>
+            打开串口设备
+            </summary>
+            <param name="info">打开信息</param>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA7.Close">
+            <summary>
+            关闭串口通道
+            </summary>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA7.Post(System.String,System.Int32,System.Double@)">
+            <summary>
+            Post数据
+            </summary>
+            <param name="barCode">一维码</param>
+            <param name="timeout">超时时间</param>
+            <param name="weight">重量信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA7.AsyncPost(System.String)">
+            <summary>
+            异步Post数据
+            </summary>
+            <param name="barCode">一维码信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA7.WightCheck(System.Double,System.Double)">
+            <summary>
+            校验w和v是否在有效误差范围之内
+            </summary>
+            <param name="w">被校验值</param>
+            <param name="v">平均值</param>
+            <returns></returns>
+        </member>
+        <member name="F:MvView.Scale.YaoHuaA7._WightWaitHandle">
+            <summary>
+            重量捕获数据
+            </summary>
+        </member>
+        <member name="F:MvView.Scale.YaoHuaA7._bLooping">
+            <summary>
+            线程运行标识
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:MvView.Scale.YaoHuaA7._WightCatchThread" -->
+        <member name="F:MvView.Scale.YaoHuaA7._WightCache">
+            <summary>
+            重量缓冲
+            </summary>
+        </member>
+        <member name="F:MvView.Scale.YaoHuaA7._LockFlagObj">
+            <summary>
+            flag对象锁
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA7.GetWight">
+            <summary>
+            实时获取当前揽件重量
+            </summary>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA7.Start">
+            <summary>
+            开始捕获重量数据
+            </summary>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA7.Stop">
+            <summary>
+            停止捕获
+            </summary>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Scale.YaoHuaA7.Dispose">
+            <summary>
+            对象释放接口
+            </summary>
+        </member>
+        <member name="P:MvView.Scale.YaoHuaA7.SampleNum">
+            <summary>
+            样本数量
+            </summary>
+        </member>
+    </members>
+</doc>

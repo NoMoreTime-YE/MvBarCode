@@ -1,0 +1,807 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MvView.Core</name>
+    </assembly>
+    <members>
+        <member name="T:MvView.Core.BarCodeCamera">
+            <summary>
+            设备层相机对象类
+            </summary>
+        </member>
+        <member name="M:MvView.Core.BarCodeCamera.#ctor(System.Int32)">
+            <summary>
+            构造相机
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="P:MvView.Core.BarCodeCamera.Valid">
+            <summary>
+            当前相机是否有效
+            </summary>
+        </member>
+        <member name="M:MvView.Core.BarCodeCamera.InitCamera">
+            <summary>
+            初始化相机
+            </summary>
+        </member>
+        <member name="P:MvView.Core.BarCodeCamera.DeviceID">
+            <summary>
+            设备序列号
+            </summary>
+        </member>
+        <member name="P:MvView.Core.BarCodeCamera.InterfaceMacAddress">
+            <summary>
+            接口mac地址信息
+            </summary>
+        </member>
+        <member name="M:MvView.Core.BarCodeCamera.StartGrab">
+            <summary>
+            开启码流
+            </summary>
+        </member>
+        <member name="E:MvView.Core.BarCodeCamera.BarCodeHandle">
+            <summary>
+            一维码事件
+            </summary>
+        </member>
+        <member name="F:MvView.Core.BarCodeCamera.locker">
+            <summary>
+            算法初始化锁
+            </summary>
+        </member>
+        <member name="P:MvView.Core.BarCodeCamera.IsStart">
+            <summary>
+            检查是否正在捕获数据
+            </summary>
+        </member>
+        <member name="M:MvView.Core.BarCodeCamera.StopGrab">
+            <summary>
+            关闭码流
+            </summary>
+        </member>
+        <member name="F:MvView.Core.BarCodeCamera._bIoOutFlag">
+            <summary>
+            Io输出互斥变量
+            </summary>
+        </member>
+        <member name="M:MvView.Core.BarCodeCamera.IoOutput(System.Int32,System.String)">
+            <summary>
+            输出相机开关量
+            </summary>
+            <param name="millSeconds">高电平持续毫秒数</param>
+            <param name="num">单号</param>
+        </member>
+        <member name="M:MvView.Core.BarCodeCamera.CheckDeviceKey(System.String)">
+            <summary>
+            设备序列号校验
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MvView.Core.BarCodeCamera.Open(System.Boolean)">
+            <summary>
+            打开相机
+            </summary>
+            <param name="isWait">同步异步标识</param>
+        </member>
+        <member name="P:MvView.Core.BarCodeCamera.IsOpen">
+            <summary>
+            相机是否打开
+            </summary>
+        </member>
+        <member name="M:MvView.Core.BarCodeCamera.Close">
+            <summary>
+            关闭相机
+            </summary>
+        </member>
+        <member name="M:MvView.Core.BarCodeCamera.OnImageGrabbing(System.Object,ThridLibray.IGrabbedEventArg)">
+            <summary>
+            码流捕获函数
+            </summary>
+            <param name="sender">事件投递方</param>
+            <param name="e">码流事件参数</param>
+        </member>
+        <member name="M:MvView.Core.BarCodeCamera.SetParameters">
+            <summary>
+            设置相机配参
+            </summary>
+        </member>
+        <member name="P:MvView.Core.BarCodeCamera.MaxWidth">
+            <summary>
+            最大分辨率宽
+            </summary>
+        </member>
+        <member name="P:MvView.Core.BarCodeCamera.MaxHeight">
+            <summary>
+            最大分辨率高
+            </summary>
+        </member>
+        <member name="P:MvView.Core.BarCodeCamera.Width">
+            <summary>
+            图像宽
+            </summary>
+        </member>
+        <member name="P:MvView.Core.BarCodeCamera.Height">
+            <summary>
+            图像高
+            </summary>
+        </member>
+        <member name="M:MvView.Core.BarCodeCamera.Dispose">
+            <summary>
+            资源释放接口
+            </summary>
+        </member>
+        <member name="T:MvView.Core.BarCodeDescribe">
+            <summary>
+            条码信息类
+            </summary>
+        </member>
+        <member name="F:MvView.Core.BarCodeDescribe._GrabImage">
+            <summary>
+            原始帧数据图片
+            </summary>
+        </member>
+        <member name="F:MvView.Core.BarCodeDescribe._Code">
+            <summary>
+            一维码
+            </summary>
+        </member>
+        <member name="F:MvView.Core.BarCodeDescribe._Regions">
+            <summary>
+            区域
+            </summary>
+        </member>
+        <member name="F:MvView.Core.BarCodeDescribe._Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="F:MvView.Core.BarCodeDescribe._ExtMessageInfo">
+            <summary>
+            条码扩展信息
+            </summary>
+        </member>
+        <member name="F:MvView.Core.BarCodeDescribe._Valid">
+            <summary>
+            有效性
+            </summary>
+        </member>
+        <member name="F:MvView.Core.BarCodeDescribe._Exception">
+            <summary>
+            条码有效性
+            </summary>
+        </member>
+        <member name="F:MvView.Core.BarCodeDescribe.cameraIndex">
+            <summary>
+            相机序列
+            </summary>
+        </member>
+        <member name="M:MvView.Core.BarCodeDescribe.#ctor">
+            <summary>
+            空构造
+            </summary>
+        </member>
+        <member name="M:MvView.Core.BarCodeDescribe.#ctor(System.Drawing.Bitmap,MvBarCode.MvCodeInfo,System.Boolean,System.Int32)">
+            <summary>
+            条码信息类构造函数
+            </summary>
+            <param name="image">识别出条码的图片</param>
+            <param name="info">条形码信息</param>
+            <param name="hasBarcode">构造函数是否含有条码信息</param>
+            <param name="cameraIndex">相机序列</param>
+        </member>
+        <member name="M:MvView.Core.BarCodeDescribe.#ctor(System.Drawing.Bitmap,MvView.Core.DetectExceptionType,System.String[],System.Collections.Generic.List{MvBarCode.MvCodeInfo},System.Int32)">
+            <summary>
+            条码信息类构造函数（异常信息）
+            </summary>
+            <param name="image">条码图片</param>
+            <param name="e">异常信息类型</param>
+            <param name="message">异常信息（条码数组）</param>
+            <param name="infoList">条码类：用于取条码坐标</param>
+            <param name="cameraIndex">相机序列</param>
+        </member>
+        <member name="P:MvView.Core.BarCodeDescribe.Valid">
+            <summary>
+            判断当前条码是否有效
+            </summary>
+        </member>
+        <member name="P:MvView.Core.BarCodeDescribe.InternalException">
+            <summary>
+            获取内部异常
+            </summary>
+        </member>
+        <member name="P:MvView.Core.BarCodeDescribe.ExceptionMessage">
+            <summary>
+            获取异常信息扩展数据
+            </summary>
+        </member>
+        <member name="P:MvView.Core.BarCodeDescribe.Code">
+            <summary>
+            获取条码
+            </summary>
+        </member>
+        <member name="P:MvView.Core.BarCodeDescribe.Type">
+            <summary>
+            条码类型
+            </summary>
+        </member>
+        <member name="P:MvView.Core.BarCodeDescribe.Regions">
+            <summary>
+            条码区域
+            </summary>
+        </member>
+        <member name="P:MvView.Core.BarCodeDescribe.CameraIndex">
+            <summary>
+            相机序列
+            </summary>
+        </member>
+        <member name="P:MvView.Core.BarCodeDescribe.GrabImage">
+            <summary>
+            条码数据对应图像（已经画出条码框）
+            </summary>
+        </member>
+        <member name="P:MvView.Core.BarCodeDescribe.OriginalGrabImage">
+            <summary>
+            原始图像
+            </summary>
+        </member>
+        <member name="M:MvView.Core.BarCodeDescribe.Clone">
+            <summary>
+            事件克隆
+            </summary>
+            <returns>克隆对象结果</returns>
+        </member>
+        <member name="T:MvView.Core.PicturePathDescribe">
+            <summary>
+            原始帧数据图片路径
+            </summary>
+        </member>
+        <member name="P:MvView.Core.PicturePathDescribe.PicPath">
+            <summary>
+            实时图片
+            </summary>
+        </member>
+        <member name="T:MvView.Core.BarCodeEventArgs">
+            <summary>
+            一维码事件类
+            </summary>
+        </member>
+        <member name="F:MvView.Core.BarCodeEventArgs._Result">
+            <summary>
+            一维码结果描述对象
+            </summary>
+        </member>
+        <member name="M:MvView.Core.BarCodeEventArgs.#ctor(MvView.Core.BarCodeDescribe)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="item">一维码描述信息</param>
+        </member>
+        <member name="P:MvView.Core.BarCodeEventArgs.Result">
+            <summary>
+            一维码结果
+            </summary>
+        </member>
+        <member name="M:MvView.Core.BarCodeEventArgs.Clone">
+            <summary>
+            对象克隆
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MvView.Core.PicturePathEventArgs">
+            <summary>
+            图片路径
+            </summary>
+        </member>
+        <member name="P:MvView.Core.PicturePathEventArgs.Result">
+            <summary>
+            图片结果
+            </summary>
+        </member>
+        <member name="M:MvView.Core.BarcodeRuleFilter.CheckAndCatchBarcode(MvBarCode.MvCodeInfo,System.Collections.Generic.List{System.String}@,MvBarCode.MvBarCodeGlobalVar.BarcodeRuleType)">
+            <summary>
+            检查并捕获条码数据
+            </summary>
+            <param name="item">条码信息</param>
+            <param name="result">条码捕获结果</param>
+            <returns>条码检测结果</returns>
+        </member>
+        <member name="M:MvView.Core.BarcodeRuleFilter.CheckBarCodeCharacter(System.String)">
+            <summary>
+            检查条码字符
+            </summary>
+            <param name="code">条码信息</param>
+            <returns>检查结果</returns>
+        </member>
+        <member name="M:MvView.Core.BarcodeRuleFilter.CheckCodeLen(System.Int32)">
+            <summary>
+            检查一维码长度
+            </summary>
+            <param name="len">被检查长度信息</param>
+            <returns>检查结果</returns>
+        </member>
+        <member name="M:MvView.Core.BarcodeRuleFilter.ShortCutBarCode(System.Char[])">
+            <summary>
+            条形码截取
+            </summary>
+            <param name="code">被截取的条码数据</param>
+            <returns>截取结果</returns>
+        </member>
+        <member name="T:MvView.Core.DetectExceptionType">
+            <summary>
+            条码检测异常类型
+            </summary>
+        </member>
+        <member name="F:MvView.Core.DetectExceptionType.NoExceptionType">
+            <summary>
+            正常条码，无异常
+            </summary>
+        </member>
+        <member name="F:MvView.Core.DetectExceptionType.NULLCodeExceptionType">
+            <summary>
+            空条码数据
+            </summary>
+        </member>
+        <member name="F:MvView.Core.DetectExceptionType.MulBarCodeExceptionType">
+            <summary>
+            一帧数据中检测到多个条码数据
+            </summary>
+        </member>
+        <member name="F:MvView.Core.DetectExceptionType.OutOfLengthRangeExceptionType">
+            <summary>
+            条码长度异常
+            </summary>
+        </member>
+        <member name="F:MvView.Core.DetectExceptionType.OutOfRulesExceptionType">
+            <summary>
+            不在有效条码规则范围
+            </summary>
+        </member>
+        <member name="T:MvView.Core.DeviceLayer">
+            <summary>
+            设备层对象类
+            </summary>
+        </member>
+        <member name="E:MvView.Core.DeviceLayer.EmbraceHandle">
+            <summary>
+            揽件数据相关事件
+            </summary>
+        </member>
+        <member name="E:MvView.Core.DeviceLayer.BarCodeHandle">
+            <summary>
+            实时一维码事件
+            </summary>
+        </member>
+        <member name="E:MvView.Core.DeviceLayer.WeightHandle">
+            <summary>
+            实时电子秤数据事件，电子秤稳定后数据不再更新
+            </summary>
+        </member>
+        <member name="E:MvView.Core.DeviceLayer.PicturePathHandle">
+            <summary>
+            图片保存路径上报事件
+            </summary>
+        </member>
+        <member name="F:MvView.Core.DeviceLayer._BarCodeCamera">
+            <summary>
+            相机实例数组
+            </summary>
+        </member>
+        <member name="P:MvView.Core.DeviceLayer.MacAddress">
+            <summary>
+            相机通讯Mac地址
+            </summary>
+        </member>
+        <member name="P:MvView.Core.DeviceLayer.DeviceID">
+            <summary>
+            相机序列号
+            </summary>
+        </member>
+        <member name="M:MvView.Core.DeviceLayer.IsCameraValid">
+            <summary>
+            检查相机是否为Null
+            </summary>
+            <returns>返回值校验</returns>
+        </member>
+        <member name="F:MvView.Core.DeviceLayer._bBarCodeNotifyFlag">
+            <summary>
+            条码通知标识
+            </summary>
+        </member>
+        <member name="M:MvView.Core.DeviceLayer.OnBarCode(System.Object,MvView.Core.BarCodeEventArgs)">
+            <summary>
+            一维码事件回调
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MvView.Core.DeviceLayer.OnWight(System.Object,MvView.Scale.WeightEventArgs)">
+            <summary>
+            称重事件回调
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MvView.Core.DeviceLayer.Initialization(System.Int32,System.String)">
+            <summary>
+            初始化设备层
+            </summary>
+            <param name="num">初始化相机数量</param>
+            <param name="protocol">重量采集协议</param>
+        </member>
+        <member name="P:MvView.Core.DeviceLayer.IsOpen">
+            <summary>
+            是否打开
+            </summary>
+        </member>
+        <member name="M:MvView.Core.DeviceLayer.OpenAllCamera(System.Boolean)">
+            <summary>
+            打开所有相机
+            </summary>
+            <param name="isWait">是否同步打开</param>
+            <returns>打开结果</returns>
+        </member>
+        <member name="M:MvView.Core.DeviceLayer.CloseAllCamera">
+            <summary>
+            关闭所有相机
+            </summary>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Core.DeviceLayer.Open">
+            <summary>
+            打开设备（注册相机事件，启动电子秤）
+            </summary>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Core.DeviceLayer.Close">
+            <summary>
+            关闭设备层对象
+            </summary>
+            <returns>操作结果</returns>
+        </member>
+        <member name="P:MvView.Core.DeviceLayer.IsStart">
+            <summary>
+            设备是否开始
+            </summary>
+        </member>
+        <member name="M:MvView.Core.DeviceLayer.StartAllCamera">
+            <summary>
+            开始捕获码流
+            </summary>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Core.DeviceLayer.Start">
+            <summary>
+            开启相机码流
+            </summary>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Core.DeviceLayer.Stop">
+            <summary>
+            关闭相机码流
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MvView.Core.DeviceLayer.ManualWeighed">
+            <summary>
+            手动称重
+            </summary>
+        </member>
+        <member name="M:MvView.Core.DeviceLayer.Dispose">
+            <summary>
+            资源清理
+            </summary>
+        </member>
+        <member name="T:MvView.Core.DeviceManager">
+            <summary>
+            设备管理类
+            </summary>
+        </member>
+        <member name="E:MvView.Core.DeviceManager.EmbraceHandle">
+            <summary>
+            重量和条码同时上报事件
+            </summary>
+        </member>
+        <member name="E:MvView.Core.DeviceManager.BarCodeHandle">
+            <summary>
+            实时一维码事件
+            </summary>
+        </member>
+        <member name="E:MvView.Core.DeviceManager.WeightHandle">
+            <summary>
+            实时电子秤数据事件，电子秤稳定后数据不再更新
+            </summary>
+        </member>
+        <member name="E:MvView.Core.DeviceManager.PicturePathHandle">
+            <summary>
+            图片保存路径上报事件
+            </summary>
+        </member>
+        <member name="P:MvView.Core.DeviceManager.Camera">
+            <summary>
+            相机实例数组
+            </summary>
+        </member>
+        <member name="P:MvView.Core.DeviceManager.Instance">
+            <summary>
+            获取设备管理单例
+            </summary>
+            <returns>设备管理对象</returns>
+        </member>
+        <member name="M:MvView.Core.DeviceManager.Initialization(System.Int32,System.String)">
+            <summary>
+            初始化设备层
+            </summary>
+            <param name="num">初始化相机数量</param>
+            <param name="protocol">电子秤协议</param>
+            <returns>初始化结果</returns>
+        </member>
+        <member name="M:MvView.Core.DeviceManager.UnInitialization">
+            <summary>
+            取消设备层初始化
+            </summary>
+            <returns>取消结果</returns>
+        </member>
+        <member name="P:MvView.Core.DeviceManager.MacAddress">
+            <summary>
+            获取相机直连网卡Mac地址
+            </summary>
+        </member>
+        <member name="P:MvView.Core.DeviceManager.DeviceID">
+            <summary>
+            获取设备ID
+            </summary>
+        </member>
+        <member name="P:MvView.Core.DeviceManager.IsStart">
+            <summary>
+            设备层是否启动
+            </summary>
+        </member>
+        <member name="M:MvView.Core.DeviceManager.Start">
+            <summary>
+            设备层是否启动
+            </summary>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:MvView.Core.DeviceManager.Stop">
+            <summary>
+            关闭设备层
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:MvView.Core.DeviceManager.IsOpen">
+            <summary>
+            设备层是否打开
+            </summary>
+        </member>
+        <member name="M:MvView.Core.DeviceManager.Open">
+            <summary>
+            打开设备层
+            </summary>
+            <returns>操作状态</returns>
+        </member>
+        <member name="M:MvView.Core.DeviceManager.Close">
+            <summary>
+            关闭设备层
+            </summary>
+            <returns>操作状态</returns>
+        </member>
+        <member name="M:MvView.Core.DeviceManager.ManualWeighed">
+            <summary>
+            手动称重
+            </summary>
+        </member>
+        <member name="M:MvView.Core.DeviceManager.TryGetLocalTime">
+            <summary>
+            尝试获取本地时间
+            </summary>
+            <returns>本地时间</returns>
+        </member>
+        <member name="M:MvView.Core.DeviceManager.TrySetLocalTime(System.DateTime)">
+            <summary>
+            设置系统时间
+            </summary>
+            <param name="dt">系统时间</param>
+        </member>
+        <member name="M:MvView.Core.DeviceManager.TrySetLocalTime(System.String)">
+            <summary>
+            设置系统时间
+            </summary>
+            <param name="strDate">系统时间字符串，yyyy-MM-dd HH:mm:ss</param>
+        </member>
+        <member name="M:MvView.Core.DeviceManager.BarCodeDelegate(System.Object,MvView.Core.BarCodeEventArgs)">
+            <summary>
+            条形码事件委托
+            </summary>
+            <param name="sender">事件发送者</param>
+            <param name="e">事件内容</param>
+        </member>
+        <member name="M:MvView.Core.DeviceManager.WeightDelegate(System.Object,MvView.Scale.WeightEventArgs)">
+            <summary>
+            电子秤称重委托
+            </summary>
+            <param name="sender">事件发送者</param>
+            <param name="e">事件内容</param>
+        </member>
+        <member name="M:MvView.Core.DeviceManager.EmbraceDelegate(System.Object,MvView.Core.EmbraceEventArgs)">
+            <summary>
+            揽件委托
+            </summary>
+            <param name="sender">事件发送者</param>
+            <param name="e">事件内容</param>
+        </member>
+        <member name="M:MvView.Core.DeviceManager.Dispose">
+             <summary>
+            Stop - Close - Dispose设备层对象
+             </summary>
+        </member>
+        <member name="T:MvView.Core.EmbraceEventArgs">
+            <summary>
+            相机揽件信息事件
+            </summary>
+        </member>
+        <member name="F:MvView.Core.EmbraceEventArgs._BarCode">
+            <summary>
+            条形码
+            </summary>
+        </member>
+        <member name="F:MvView.Core.EmbraceEventArgs._Weight">
+            <summary>                               
+            揽件称重
+            </summary>
+        </member>
+        <member name="M:MvView.Core.EmbraceEventArgs.#ctor(MvView.Core.BarCodeDescribe,System.Double)">
+            <summary>
+            事件构造函数
+            </summary>
+            <param name="info">条码信息</param>
+            <param name="weight">重量</param>
+        </member>
+        <member name="P:MvView.Core.EmbraceEventArgs.Width">
+            <summary>
+            图像宽
+            </summary>
+        </member>
+        <member name="P:MvView.Core.EmbraceEventArgs.Height">
+            <summary>
+            图像高
+            </summary>
+        </member>
+        <member name="P:MvView.Core.EmbraceEventArgs.Weight">
+            <summary>
+            揽件称重
+            </summary>
+        </member>
+        <member name="P:MvView.Core.EmbraceEventArgs.BarCode">
+            <summary>
+            一维码信息
+            </summary>
+        </member>
+        <member name="P:MvView.Core.EmbraceEventArgs.GrabImage">
+            <summary>
+            揽件图片信息
+            </summary>
+        </member>
+        <member name="T:MvView.YunDa.SystemClock">
+            <summary>
+            封装系统时间统计
+            </summary>
+        </member>
+        <member name="M:MvView.YunDa.SystemClock.Now">
+            <summary>
+            返回当前CPU纳秒数
+            </summary>
+            <returns>纳秒时间</returns>
+        </member>
+        <member name="M:MvView.YunDa.SystemClock.MillisecSubtract(System.Int64,System.Int64)">
+            <summary>
+            计算时间差值
+            </summary>
+            <param name="t1">Time1</param>
+            <param name="t2">Time2</param>
+            <returns>毫秒级的时间差</returns>
+        </member>
+        <member name="M:MvView.YunDa.SystemClock.MicrosecSubtract(System.Int64,System.Int64)">
+            <summary>
+            计算时间差值
+            </summary>
+            <param name="t1">Time1</param>
+            <param name="t2">Time2</param>
+            <returns>微秒级的时间差</returns>
+        </member>
+        <member name="T:MvView.Time.SystemDateTime">
+            <summary>
+            系统时间结构体
+            </summary>
+        </member>
+        <member name="F:MvView.Time.SystemDateTime.Year">
+            <summary>
+            年
+            </summary>
+        </member>
+        <member name="F:MvView.Time.SystemDateTime.Month">
+            <summary>
+            月
+            </summary>
+        </member>
+        <member name="F:MvView.Time.SystemDateTime.DayOfWeek">
+            <summary>
+            每周的事件
+            </summary>
+        </member>
+        <member name="F:MvView.Time.SystemDateTime.Day">
+            <summary>
+            日
+            </summary>
+        </member>
+        <member name="F:MvView.Time.SystemDateTime.Hour">
+            <summary>
+            时
+            </summary>
+        </member>
+        <member name="F:MvView.Time.SystemDateTime.Minute">
+            <summary>
+            分
+            </summary>
+        </member>
+        <member name="F:MvView.Time.SystemDateTime.Second">
+            <summary>
+            秒
+            </summary>
+        </member>
+        <member name="F:MvView.Time.SystemDateTime.MilliSeconds">
+            <summary>
+            毫秒
+            </summary>
+        </member>
+        <member name="T:MvView.Time.SystemTime">
+            <summary>
+            系统时间管理
+            </summary>
+        </member>
+        <member name="M:MvView.Time.SystemTime.GetLocalTime(MvView.Time.SystemDateTime@)">
+            <summary>
+            获取当前系统时间
+            </summary>
+            <param name="st">系统时间结构</param>
+        </member>
+        <member name="M:MvView.Time.SystemTime.SetLocalTime(MvView.Time.SystemDateTime@)">
+            <summary>
+            设置当前系统时间
+            </summary>
+            <param name="st">系统时间结构</param>
+        </member>
+        <member name="M:MvView.Time.SystemTime.DataTimeToSystemTime(System.DateTime)">
+            <summary>
+            DateTime格式转换为SystemTime
+            </summary>
+            <param name="dt">DateTime格式时间</param>
+            <returns>SystemTime格式时间</returns>
+        </member>
+        <member name="M:MvView.Time.SystemTime.SetSystemTime(System.DateTime)">
+            <summary>
+            同步本地事件
+            </summary>
+            <param name="dt">DateTime时间</param>
+        </member>
+        <member name="M:MvView.Time.SystemTime.SetSystemTime(MvView.Time.SystemDateTime)">
+            <summary>
+            同步本地时间
+            </summary>
+            <param name="st">时间字符串，字符串格式为：</param>
+        </member>
+        <member name="M:MvView.Time.SystemTime.SetSystemTime(System.String)">
+            <summary>
+            同步本地时间
+            </summary>
+            <param name="strTime">时间字符串</param>
+        </member>
+        <member name="M:MvView.Time.SystemTime.GetSystemTime">
+            <summary>
+            获取系统时间
+            </summary>
+            <returns>系统当前时间</returns>
+        </member>
+    </members>
+</doc>
